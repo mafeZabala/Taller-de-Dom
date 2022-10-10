@@ -13,7 +13,11 @@
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
     <title>Document</title>
 </head>
+
 <body>
+    <header class="header">
+        <h1 class="text_principal">Fundamentos de javascript</h1>
+    </header>
     <h4 class="ejemplo">ejercicio(investigación)</h4>
 
     <form action="" id="formulario" class="ejemplo">
@@ -37,17 +41,13 @@
             <button type="button" onclick="dividir()">Dividir</button>
         </div>
         <!-- mostar el resultado -->
-        <p>El resultado es: <span id="resultado"></span></p>
-        
-        
+        <p>El resultado es: <span id="resultado"></span></p>     
     </form>
     <br><br>
     <hr>
     <!-- //////////////////////////////////////////////////// -->
     <!-- ejercicio de clase  -->
-    <header class="header">
-        <h1 class="text_principal">Fundamentos de javascript</h1>
-    </header>
+   
     <div class="ejemplo">
         <h3 class="ejemplo">Ejemplo 1</h3>
         <br>
@@ -134,7 +134,7 @@
         <p> color:<input type="color" name="" id="valuecolor"></p>
     </form>
     <hr>
-    <!-- ////////////////////////////////////////////// -->
+    <!-- /////////////////////////////////////////////////////////////////////////// -->
     <!-- textarea -->
     <section>
 
@@ -146,34 +146,38 @@
         <input type="button" id="btnTextArea" class="btn btn-drak btn-outline-danger " value="validar">
     </section>
     <hr>
-    <!-- /////////////////////////////////////////// -->
-    <h3 class="ejemplo">Expresiones Regulares</h3>
-        <h4 class="ejercicio">Ejercicio 6</h4>
-        <div class="ejemplo">
-            <label for="txtCar"> ejemplo expresion regular: Letra+Vocal</label>
-            <label for="ingrese Texto"></label>
-            <input type="text" id="txtCar" placeholder="ingrese texto">
-            <p id="textRegular"></p>
-            <button type="button" class="btn btn-info" onclick="validarCaracteres" id="boton">validar</button>
-        </div>
-        <hr>
-        <h4 class="ejercicio">Ejercicio 7</h4>
-        <div class="ejemplo">
-            <label for="text">expresion regular: Números</label>
-            <input type="text" id="txtCar2" placeholder="ingrese texto">
-            <p id="textRegular2"></p>
-            <button type="button" class="btn btn-info" onclick="validarNumeros">validar</button>
-        </div>
-        <hr>
-        <h4 class="ejercicio">Ejercicio 8</h4>
-        <div class="ejemplo">
+    <!-- /////////////////////////////////////////////////////////////////////////// -->
 
-            <label for=""> ejemplo expresion regular: </label>
-            <label for="numeroalert"></label>
-            <input type="text" id="numeroalert" placeholder="ingrese texto" >
-            <button type="" class="btn btn-info">validar</button onclick="evaluartext">
-            <p id="alert"></p>
-        </div>
+    <section>
+        <h3 class="ejemplo">Expresiones Regulares</h3>
+            <h4 class="ejercicio">Ejercicio 6</h4>
+            <div class="ejemplo">
+                <label for="txtCar"> ejemplo expresion regular: Letra+Vocal</label>
+                <input type="text" id="txtCar" placeholder="ingrese texto">
+                <p id="textRegular"></p>
+                <button type="button" class="btn btn-info" id="btnRegular">validar</button>
+            </div>
+            <hr>
+            <!-- /////////////////////////////////////////////////////////////////////////////// -->
+            <h4 class="ejercicio">Ejercicio 7</h4>
+            <div class="ejemplo">
+                <label for="txtCar2">expresion regular: Números</label>
+                <input type="text" id="txtCar2" placeholder="ingrese texto">
+                <p id="textRegular2"></p>
+                <button type="button" class="btn btn-info" id="btnRegular2">validar</button>
+            </div>
+            <hr>
+            <!-- /////////////////////////////////////////////////////////////////////////////// -->
+            <h4 class="ejercicio">Ejercicio 8</h4>
+            <div class="ejemplo">
+    
+                <label for=""> ejemplo expresion regular: </label>
+                <label for="numeroalert"></label>
+                <input type="text" id="numeroalert" placeholder="ingrese texto" >
+                <button type="button" class="btn btn-info" onclick="validarTelefono()">validar</button>
+                <p id="alert"></p>
+            </div>
+    </section>
         <hr>
         <!-- eventos de teclado -->
         <h1 class="text_principal">Eventos del teclado</h1>
@@ -190,17 +194,16 @@
         <hr>
         <h3 class="ejemplo">Ejercicio imagenes</h3>
         <div class="ejemplo">
-
-            <p></p>
+            <br>
             <div class="imagenPrincipal">
-                <img src="./imagenes/img1.jpg" alt="" class="imagen" id="imagendepantalla">
+                <img src="./img/img1.jpg" alt="" class="imagen" id="imagendepantalla">
             </div>
             <div class="contenedor-imagenes ">
-                <img src="./imagenes/img1.jpg" alt="" class="imagenes" onclick="muestra(`primero`)" name="primero">
-                <img src="./imagenes/img2.jpeg" alt="" class="imagenes" onclick="muestra(`segundo`)" name="segundo">
-                <img src="./imagenes/img3.jpg" alt="" class="imagenes" onclick="muestra(`tercero`)" name="tercero">
-                <img src="./imagenes/img4.jpg" alt="" class="imagenes" onclick="muestra(`cuarto`)" name="cuarto">
-        </div>
+                <img src="./img/img1.jpg" alt="" class="imagenes" onclick="muestra(`primero`)" name="primero">
+                <img src="./img/img2.jpeg" alt="" class="imagenes" onclick="muestra(`segundo`)" name="segundo">
+                <img src="./img/img3.jpg" alt="" class="imagenes" onclick="muestra(`tercero`)" name="tercero">
+                <img src="./img/img4.jpg" alt="" class="imagenes" onclick="muestra(`cuarto`)" name="cuarto">
+            </div>
 
         </div>
         <hr>
@@ -208,10 +211,12 @@
     <!-- creacion de nodos-->
     <section>
         <h3 class="ejemplo">Ejercicio de nodos</h3>
-        <div class="nodos">
-            <input type="button" id="btncrear" value="Crear" class="btn btn-info">
-            <input type="button" id="btnDuplicar" value="Duplicar" class="btn btn-info">        
-            <input type="button" id="btnEliminar" value="Eliminar" class="btn btn-danger">        
+        <div class="text-center">
+            <div class="nodos">
+                <input type="button" id="btncrear" value="Crear" class="btn btn-info">
+                <input type="button" id="btnDuplicar" value="Duplicar" class="btn btn-info">        
+                <input type="button" id="btnEliminar" value="Eliminar" class="btn btn-danger">        
+            </div>
            <!-- contenedor destino de la manipulacion de nodos -->
             <div id="copia">
                 <p id="nuevoTexto"></p>
@@ -263,10 +268,6 @@
 
 
    
-    
-
-
-    
     
     <script src="./ejercicio.js"></script>
     <!-- JavaScript Bundle with Popper -->

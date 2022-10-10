@@ -32,31 +32,31 @@ const sumaDeNotas= (array) =>
 /* sort:ordena el array */
 /* reverse: voltear el array */
 
-function sumar()
-/* queryselector es un selector Css y trae el primero elemento que tenga relacion con eso */
-{
-    let valorUno=+(document.querySelector('#valorUno').value) 
-    let valorDos= parseInt(document.getElementById('valorDos').value)
-    document.getElementById('resultado').innerHTML=valorUno+valorDos
-}
-function restar()
-{
-    let valorUno= parseInt(document.getElementById('valorUno').value) 
-    let valorDos= parseInt(document.getElementById('valorDos').value)
-    document.getElementById('resultado').innerHTML=valorUno-valorDos   
-}
-function multiplicar()
-{
-    let valorUno= parseInt(document.getElementById('valorUno').value) 
-    let valorDos= parseInt(document.getElementById('valorDos').value)
-    document.getElementById('resultado').innerHTML=valorUno*valorDos
-}
-function dividir()
-{
-    let valorUno= parseInt(document.getElementById('valorUno').value) 
-    let valorDos= parseInt(document.getElementById('valorDos').value)
-    document.getElementById('resultado').innerHTML=(valorUno/valorDos).toFixed(3)
-}
+// function sumar()
+// /* queryselector es un selector Css y trae el primero elemento que tenga relacion con eso */
+// {
+//     let valorUno=+(document.querySelector('#valorUno').value) 
+//     let valorDos= parseInt(document.getElementById('valorDos').value)
+//     document.getElementById('resultado').innerHTML=valorUno+valorDos
+// }
+// function restar()
+// {
+//     let valorUno= parseInt(document.getElementById('valorUno').value) 
+//     let valorDos= parseInt(document.getElementById('valorDos').value)
+//     document.getElementById('resultado').innerHTML=valorUno-valorDos   
+// }
+// function multiplicar()
+// {
+//     let valorUno= parseInt(document.getElementById('valorUno').value) 
+//     let valorDos= parseInt(document.getElementById('valorDos').value)
+//     document.getElementById('resultado').innerHTML=valorUno*valorDos
+// }
+// function dividir()
+// {
+//     let valorUno= parseInt(document.getElementById('valorUno').value) 
+//     let valorDos= parseInt(document.getElementById('valorDos').value)
+//     document.getElementById('resultado').innerHTML=(valorUno/valorDos).toFixed(3)
+// }
 /* let valorUno=+(document.getElementById('valorUno').value) 
 let valorDos=+(document.getElementById('valorDos').value)
 let resultado=document.getElementById('resultado')
@@ -135,13 +135,14 @@ mtdMostrar();
 /* ///////////////////////////////////////////////////// */
 /* componentes de formulario */
 /* una funcion para capturar dos datos de caja de texto */
+let resul  = 0;
 function calcular() 
 {
-    let numUno = document.getElementById("n1").value
-    numDos = document.getElementById("n2").value 
+    let numUno = document.getElementById("n1").value,
+    numDos = document.getElementById("n2").value;
     if (numUno>0 && numDos>0) 
     {
-        let resul = parent(numUno) + parent(numDos)
+        resul = parseInt(numUno) + parseInt(numDos)
     
     }else
     {
@@ -152,7 +153,6 @@ function calcular()
      document.getElementById("formRes").value = resul
 }
 
-
 /* ejercicio 2 */
 window.onload = function() 
 {
@@ -161,35 +161,37 @@ window.onload = function()
     document.querySelector("#multiplicar").onclick = multiplicar
     document.querySelector("#dividir").onclick = dividir
 }
-let resul;
+
+let result = 0;
 function sumar() 
 {
-    let numUno = document.getElementById("nUno").value
-    numDos = document.getElementById("nDos") .value
-    resul = parseInt(numUno) + parseInt(numDos)
+    numUno = document.getElementById("nUno").value
+    numDos = document.getElementById("nDos") .value 
+    result = parseInt(numUno) + parseInt(numDos)
 }
 function restar() 
 {
-    let numUno = document.getElementById("nUno").value
-    numDos = document.getElementById("nDos") .value
-    resul = parseInt(numUno) - parseInt(numDos)
+    numUno = document.getElementById("nUno").value,
+    numDos = document.getElementById("nDos") .value,
+    result = parseInt(numUno) - parseInt(numDos)
 }
 function multiplicar() 
 {
-    let numUno = document.getElementById("nUno").value
-    numDos = document.getElementById("nDos") .value
-    resul = parseInt(numUno) * parseInt(numDos)
+    numUno = document.getElementById("nUno").value,
+    numDos = document.getElementById("nDos") .value,
+    result = parseInt(numUno) * parseInt(numDos)
 }
 function dividir() 
 {
-    let numUno = document.getElementById("nUno").value
+    numUno = document.getElementById("nUno").value
     numDos = document.getElementById("nDos") .value
-    resul = parseInt(numUno) / parseInt(numDos)
+    result = parseInt(numUno) / parseInt(numDos)
 }
 function calcularBoton()
 {
-    document.querySelector("#resul").value=resul
+    document.querySelector("#resul").value = result
 }
+
 /* //////////////////////////////////////////////// */
 /* ejercicio 3 */
 let num;
@@ -211,7 +213,7 @@ function datos()
 }
 /* ////////////////////////////////////////////////// */
 /* ejecicio 7 */
-let color= document.getElementById('select1')
+let color= document.getElementById('select1');
 function cambiarColor() 
 {
     document.getElementById('text1').value = color.selectedIndex
@@ -222,7 +224,7 @@ function cambiarColor()
     
 }
 /*  el evenentlistener es el que esta pendiente de los eventos o agregar eventos*/
-color.addEventListener('change', cambiarColor )
+color.addEventListener('change', cambiarColor );
 /* ///////////////////////////////////// */
 /* ejercicio 5 textarea */
 const controlarCaracteres = () =>
@@ -241,7 +243,9 @@ const controlarCaracteres = () =>
 }
 /* funcion caracteres */
 let boton= document.getElementById('btnTextArea')
-boton.addEventListener("click", controlarCaracteres)
+boton.addEventListener("click", controlarCaracteres);
+
+
 /* ///////////////////////////////////////////////// */
 /* ejercicio 6 *
 /*  expresiones regulares*/
@@ -249,72 +253,78 @@ boton.addEventListener("click", controlarCaracteres)
 /* PATRON SE CREA CON SLASH INICIA ^ FINALIZA $ */
 let patronStartLet = /^[a-zA-Z]/;
 let patronVocales = /[aeiouAEIOUáéíóú]/;
-/* let alertTexto = document.getElementById(`alerTexto`); */
+/* let  textRegular= document.getElementById(`textRegular`); */
 
-let textoAfirmar = "Ha ingresado los caracteros correctamente";
+let textoAfirmar = "Ha ingresado los caracteres correctamente";
 let textoNegar = "Los caracteres no están correctos";
 
-const validarCaracteres = () =>
-{
-    let textoExp = document.getElementById(`textcar`).value;
-    
+function validarCaracteres() 
+{    
+    let textoExp = document.getElementById("txtCar").value;
     if(patronStartLet.test(textoExp) && patronVocales.test(textoExp))
     {
-       /*  textRegular.innerHTML = textoAfirmar;
-        
+        textRegular.innerHTML = textoAfirmar;
         textRegular.classList.remove("text-danger")
-        textRegular.classList.add("text-success") */
-        document.getElementById(`textRegular`).innerHTML =  textoAfirmar
+        textRegular.classList.add("text-success")
+        /* document.getElementById(`textRegular`).innerHTML = textoAfirma; */
     }
     else
     {
-        /* textRegular.innerHTML = textoNegar;
+        textRegular.innerHTML = textoNegar;
         textRegular.classList.remove("text-success")
-        textRegular.classList.add("text-danger") */
-        document.getElementById(`textRegular`).innerHTML = textoNegar
+        textRegular.classList.add("text-danger")
+        /* document.getElementById(`textRegular`).innerHTML = textoNegar; */
     }
-}
-let btn4 = document.getElementById(`boton`);
-btn4.addEventListener(`click`,validarCaracteres)
+} 
+
+
+let btn4 = document.getElementById("btnRegular");
+btn4.addEventListener('click',validarCaracteres);
 
 /* ejemplo 2 */
 
 let patronNumLet = /^[a-zA-Z0-9]*$/
-let patronNumeros = /[0-9]{1}/
+let patronNumeros = /[0-9]{10}/
 
-let alertTexto2 = document.getElementById(``);
+let alertTexto2 = document.getElementById(`textCar2`);
 
-const validarNumeros = () =>
+function validarNumeros()
 {
-    let textoVali = document.getElementById(``).value;
+    let textoVali = document.getElementById(`textRegular2`).value;
     
     if(patronNumLet.test(textoVali) && patronNumeros.test(textoVali))
     {
-        alertTexto2.innerHTML = textoAfirmar;
+        textRegular2.innerHTML = textoAfirmar;
 
-        alertTexto2.classList.remove("text-danger")
-        alertTexto2.classList.add("text-success")
+        textRegular2.classList.remove("text-danger")
+        textRegular2.classList.add("text-success")
     }
     else
     {
-        /* .innerHTML = textoNegar;
-        .classList.remove("text-success")
-        .classList.add("text-danger") */
+        textRegular2.innerHTML = textoNegar;
+        textRegular2.classList.remove("text-success")
+        textRegular2.classList.add("text-danger")
     }
 }
+let btn5 = document.getElementById(`btnRegular2`);
+btn5.addEventListener(`click`,validarNumeros)
+
+
 /* ejemplo 3 */
-let numero = document.getElementById(`numeroalert`).value
 let alertext= document.getElementById(`alert`)
 
-let patron = /^607|[0-9]{7}$/;
-if (patron.test(num)) 
+let patron = /^607[0-9]{7}$/;
+function validarTelefono ()
 {
-    alertext.innerHTML = `correcto`
-
+    let numero = document.getElementById(`numeroalert`).value
+    if (patron.test(numero)) 
+    {
+        alertext.innerHTML = `correcto`
     
-}else{
-    alertext.innerHTML =  `incorrecto debe iniciar con 607`
-
+        
+    }else{
+        alertext.innerHTML =  `incorrecto debe iniciar con 607`
+    }
 }
 /* eventos de teclado */
 /* ejercicio 9 */
@@ -357,6 +367,9 @@ function muestra(numero)
     let click = document.images["imagendepantalla"] 
       click.src= imagenes
 }
+
+
+////////////////////////////////////////////////////////////////////////////////
 /* ejercicio nodos */
 const nuevoElemento= document.createElement("p")
 /* creacion de un noto de texto */
